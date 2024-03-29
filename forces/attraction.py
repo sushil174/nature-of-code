@@ -11,7 +11,7 @@ class Attractor :
     def __init__(self,x,y,m) :
         self.pos = pygame.math.Vector2(x,y)
         self.mass = m
-        self.r = math.sqrt(m) * 10
+        self.r = math.sqrt(m) * 5
 
     def attract(self,mover) :
         force = self.pos - mover.pos
@@ -22,7 +22,7 @@ class Attractor :
         mover.applyForce(force)
 
     def show(self,surface) :
-        pygame.draw.circle(surface,'white',self.pos,self.mass * 2)
+        pygame.draw.circle(surface,'white',self.pos,self.r)
 
 class Mover :
     def __init__(self,x,y,m):
@@ -30,7 +30,7 @@ class Mover :
         self.vel = pygame.math.Vector2()
         self.acc = pygame.math.Vector2()
         self.mass = m
-        self.r =math.sqrt(m) * 10
+        self.r =math.sqrt(m) * 2
 
     def applyForce(self,force) :
         f = force/self.mass
@@ -44,7 +44,7 @@ class Mover :
     
     def show(self,surface):
         
-        pygame.draw.circle(surface,'white',self.pos,self.mass * 2,1)
+        pygame.draw.circle(surface,'white',self.pos,self.r,1)
 
 
 
