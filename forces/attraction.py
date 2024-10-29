@@ -69,4 +69,4 @@ while True :
         mov.show(screen)
     attractor.show(screen)
     pygame.display.update()
-    clock.tick(30)
+    clock.tick(60)
